@@ -19,11 +19,14 @@ class AddTodo extends React.Component {
 
     render() {
         return (
-            <div>
-                <input onChange={ e => this.updateInput(e.target.value) } value={this.state.input} />
-                <button className="add-todo" onClick={this.handleAddTodo}>
-                    Add Todo
-                </button>
+            <div className="input-group mb-3">
+                <input type="text" className="form-control" 
+                    placeholder="Enter new Todo item" aria-label="Enter new Todo item" aria-describedby="basic-addon2"
+                    onChange={ e => this.updateInput(e.target.value) } value={this.state.input}
+                    />
+                <div className="input-group-append">
+                    <span className="input-group-text" id="basic-addon2" onClick={this.handleAddTodo} >Add Todo</span>
+                </div>
             </div>
         )
     }
